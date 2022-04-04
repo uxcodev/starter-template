@@ -1,3 +1,5 @@
+/*
+
 // FOR DIGITAL OCEAN
 
 'use strict';
@@ -33,22 +35,30 @@ const server = createServer(app);
 server.listen(8080, function () {
   console.log('Listening on http://0.0.0.0:8080');
 });
+*/
 
 // FOR HEROKU
-/*
-const express = require('express')
-const serveStatic = require('serve-static')
-const path = require('path')
 
-const app = express()
+// const express = require('express')
+// const serveStatic = require('serve-static')
+// const path = require('path')
 
-app.use('/', serveStatic(path.join(__dirname, '/dist')))
+// const app = express()
 
-function (req, res) {
-  res.sendFile(path.join(__dirname, '/dist/index.html'))
-})
+// app.use('/', serveStatic(path.join(__dirname, '/dist')))
 
-const port = process.env.PORT || 8080
-app.listen(port)
-console.log(`app is listening on port: ${port}`)
-*/
+// function (req, res) {
+//   res.sendFile(path.join(__dirname, '/dist/index.html'))
+// }
+
+// const port = process.env.PORT || 8080
+// app.listen(port)
+// console.log(`app is listening on port: ${port}`)
+
+const express = require('express');
+const serveStatic = require("serve-static")
+const path = require('path');
+app = express();
+app.use(serveStatic(path.join(__dirname, 'dist')));
+const port = process.env.PORT || 8080;
+app.listen(port);
